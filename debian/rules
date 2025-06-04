@@ -17,6 +17,9 @@ distrelease  := $(shell lsb_release -cs)
 
 PYVERS	= $(shell py3versions -vs)
 PYVERS	= 3.11 3.12
+ifeq ($(DEB_HOST_ARCH_CPU),sw64)
+  PYVERS = 3.12
+endif
 
 MIN_VER = 3.11.6-1~
 NEXT_VER = 3.13
